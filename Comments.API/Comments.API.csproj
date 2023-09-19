@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+	  <PackageReference Include="MediatR" Version="$(Mediator)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Comments.Application\Comments.Application.csproj" />
+    <ProjectReference Include="..\Comments.Persistance\Comments.Persistance.csproj" />
+  </ItemGroup>
+
+</Project>

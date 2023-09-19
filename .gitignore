@@ -5,3 +5,9 @@
 /.vs
 /Comments.Domain/obj
 /Comments.Domain/bin/Debug/net6.0
+/Comments.API/bin/Debug/net6.0
+/Comments.API/obj
+/Comments.Application/bin/Debug/net6.0
+/Comments.Application/obj
+/Comments.Persistance/bin/Debug/net6.0
+/Comments.Persistance/obj
