@@ -129,7 +129,7 @@ namespace Comments.Persistance.Repositories
                 else
                 {
                     matches = matches.OrderByDescending(it => it.CommentTime);
-                    sortOrder = "desc";  // set to default
+                    sortOrder = "desc"; 
                 }
                 sortBy = "created-on";
             }
@@ -139,11 +139,11 @@ namespace Comments.Persistance.Repositories
                 System.Linq.Expressions.Expression<Func<CommentEntity, object>> sort = (it => it.CommentTime);
                 sort = sortBy switch
                 {
-                    "context-identifier" => it => it.ContextIdentifier,
+                    "contextIdentifier" => it => it.ContextIdentifier,
                     "context" => it => it.ContextIdentifier,
-                    "user-identifier" => it => it.UserIdentifier,
-                    "user-id" => it => it.UserIdentifier,
-                    "comment-text" => it => it.CommentText,
+                    "userIdentifier" => it => it.UserIdentifier,
+                    "userId" => it => it.UserIdentifier,
+                    "commentText" => it => it.CommentText,
                     "text" => it => it.CommentText,
                     _ => it => it.CommentTime,
                 };
@@ -154,11 +154,11 @@ namespace Comments.Persistance.Repositories
                 else
                 {
                     matches = matches.OrderByDescending(it => it.CommentTime);
-                    sortOrder = "desc";  // set to default
+                    sortOrder = "desc"; 
                 }
             }
 
-            //paging           
+        
             int pgSize = pageSize;
             int total = matches.Count();
             int totalPages = (int)Math.Ceiling(total * 1.0 / pgSize);

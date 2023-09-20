@@ -1,4 +1,5 @@
-using Comments.Application.Comments.Commands.Add;
+using Comments.API.Filters;
+using Comments.Application;
 using Comments.Domain.Interfaces;
 using Comments.Persistance;
 using Comments.Persistance.Repositories;
@@ -12,14 +13,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
-builder.Services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining<AddCommentCommand>());
+builder.Services.AddMvc(opt => { opt.Filters.Add<ApiExceptionFilterAttribute>(); });
 
 builder.Services.AddDbContext<CommentsDbContext>();
 builder.Services.AddScoped<ICommentsRepository, CommentsRepository>();
 
+builder.Services.AddApplication();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
