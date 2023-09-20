@@ -19,7 +19,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DATABASE_NAME": "comments",
         "DATABASE_USER_NAME": "sa",
-        "DATABASE_PASSWORD": "123Asseco!",
+        "DATABASE_PASSWORD": "*****",
         "DATABASE_PORT": "1433",
         "DATABASE_HOST_NAME": "localhost"
       }
